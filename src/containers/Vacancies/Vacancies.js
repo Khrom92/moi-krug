@@ -1,19 +1,18 @@
 import React from "react";
 import {StyleSheet, Text, View, ScrollView, Button, Image, TouchableWithoutFeedback} from 'react-native';
 import RNC from 'react-native-css';
-import {createMaterialTopTabNavigator,  StackNavigator} from 'react-navigation';
+import {createMaterialTopTabNavigator, StackNavigator} from 'react-navigation';
 import VacanciesDetailed from "./VacanciesDetailed";
-import { bindActionCreators } from 'redux';
-import * as counterAction from '../../rdx/vacancies/vacanciesActions';
+import {bindActionCreators} from 'redux';
+import * as counterActions from '../../rdx/vacancies/vacanciesActions';
 
-import { connect } from 'react-redux';
-
+import {connect} from 'react-redux';
 
 
 const styles = RNC`
     container {
         flex: 1;
-        background-color: #eee;
+        background-color: #f7f7f7;
     }
     vacancy {
  
@@ -24,11 +23,26 @@ const styles = RNC`
         padding: 5 10;
         border-bottom: 1px solid #444;
         border-top: 1px solid #ccc;
+        
+       
     }
     
     vacancyTitle {
         font-size: 18px;
         font-weight: bold;
+        font-family: Arial;
+    }
+     vacancyDicription {
+        font-size: 14px;
+        font-family: Arial;
+        color: #999;
+
+    }
+    vacancySalary {
+        font-size: 17px;
+        font-weight: bold;
+        font-family: Arial;
+        color: #68c07b;
     }
     
     logo {
@@ -41,43 +55,49 @@ const styles = RNC`
 
 class Vacancies extends React.Component {
 
+
     static navigationOptions = {
-            headerStyle: {
-                display: 'none'
-            }
+        headerStyle: {
+            display: 'none'
+        }
 
     };
 
+    componentWillMount() {
+        this.props.counterActions.getVacancies();
+    }
 
-    handleTap = (index)=> {
-        // this.props.navigation.navigate('VacanciesDetailed');
-        this.props.counterAction.increment(index);
-    };
 
-    onCountPlus = () => {
-        return this.props;
+    handleTap = (item) => {
+        this.props.navigation.navigate('VacanciesDetailed', {item});
+        // console.log(index);
+        // this.props.counterActions.increment(index);
     };
 
 
     render() {
-        const { vacancies } = this.props;
-        // const { increment } = this.props.counterAction;
+        const {vacancies} = this.props;
+        // const { increment } = this.props.counterActions;
 
         return (
             <View style={styles.container}>
-                {/*<Button title={this.onCountPlus}/>*/}
                 <ScrollView>
                     {
-                        vacancies.vacanciesList.concat(vacancies.vacanciesList).concat(vacancies.vacanciesList).concat(vacancies.vacanciesList).concat(vacancies.vacanciesList).concat(vacancies.vacanciesList).map((vacancy, index) => (
-                            <TouchableWithoutFeedback key={index}  onPress={this.handleTap(index)}>
+                        vacancies.vacanciesList.map((vacancy, index) => (
+                            <TouchableWithoutFeedback key={index} onPress={() => {
+                                this.handleTap(vacancy)
+                            }}>
                                 <View style={styles.vacancy}>
                                     <Image style={styles.logo}
-                                           source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}/>
+                                           source={{uri: vacancy.img}}/>
                                     <View style={styles.contentStart}>
                                         <Text style={styles.vacancyTitle}>{vacancy.title}</Text>
-                                        <Text>{vacancy.companyName}</Text>
-                                        <Text>это каунт из стэйта = {vacancy.count}</Text>
-                                        <Text>{vacancy.salary} <Text>{vacancy.currency}</Text></Text>
+                                        <Text style={styles.vacancyDicription}>{vacancy.companyName}</Text>
+                                        <Text style={styles.vacancySalary}>
+                                            {vacancy.salary.salaryDown  ?  `От ${vacancy.salary.salaryDown}` : ''}
+                                            {vacancy.salary.salaryUp  ?  ` До ${vacancy.salary.salaryUp}` : ''}
+                                            {vacancy.salary.currency ?  ` ${vacancy.salary.currency}` : ''}
+                                        </Text>
                                     </View>
                                 </View>
                             </TouchableWithoutFeedback>
@@ -93,7 +113,7 @@ class Vacancies extends React.Component {
 
 // export default connect((state) => ({
 //     vacancies: state.vacancies
-// }), dispatch => {bindActionCreators(CounterAction, dispatch)
+// }), dispatch => {bindActionCreators(CounterActions, dispatch)
 //
 // })(Vacancies)
 
@@ -105,8 +125,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        counterAction: bindActionCreators(counterAction, dispatch)
+        counterActions: bindActionCreators(counterActions, dispatch)
     }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Vacancies)
+

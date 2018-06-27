@@ -10,8 +10,9 @@ const VacanciesStack = createStackNavigator({
     VacanciesDetailed
 
 }, {
-    // mode: 'modal',
-    // headerMode: 'none',
+    // mode: 'modal'
+    //  headerMode: 'float',
+    // headerTransitionPreset: 'uikit'
 });
 
 export default createMaterialTopTabNavigator({
@@ -21,9 +22,21 @@ export default createMaterialTopTabNavigator({
     initialRouteName: 'VacanciesStack',
     animationEnabled: true,
     tabBarOptions: {
-        style: {
-            backgroundColor: 'green',
+        indicatorStyle: {
+            backgroundColor: 'rgb(20, 99, 217)'
+
         },
+
+        style: {
+            backgroundColor: '#f7f7f7',
+        },
+        labelStyle: {
+            color: '#464646',
+            fontWeight: "bold",
+            fontFamily: 'Arial'
+        },
+
+
         tabStyle: {
             paddingTop: 20
         }
