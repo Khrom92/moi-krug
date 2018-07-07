@@ -16,7 +16,7 @@ export function decrement() {
 }
 export function getVacancies() {
     return (dispatch) => {
-        fetch('http://192.168.1.72:3000/vacancies', {})
+        fetch('/vacancies', {})
             .then((data) => {
                 console.log("good");
                 dispatch(saveVacancies(data))
@@ -24,6 +24,20 @@ export function getVacancies() {
             .catch(error => console.error(error));
     }
 }
+
+export function getFilter(data) {
+    return (dispatch) => {
+        dispatch(saveFilter(data));
+    }
+
+}
+
+const saveFilter = (payload) => {
+    return {
+        type: types.SAVE_FILTER,
+        payload
+    }
+};
 
 const saveVacancies = (payload) => {
     return {

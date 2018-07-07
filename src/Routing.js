@@ -1,19 +1,24 @@
 import React from 'react';
-import {createMaterialTopTabNavigator, createStackNavigator} from 'react-navigation';
+import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 
 import Vacancies from './containers/Vacancies/';
 import VacanciesDetailed from './containers/Vacancies/VacanciesDetailed';
+import VacanciesFilter from './containers/Vacancies/VacanciesFilter';
 import Profile from './containers/Profile';
 
-const VacanciesStack = createStackNavigator({
-    Vacancies,
-    VacanciesDetailed
+const VacanciesStack = createStackNavigator(
+    {
+        Vacancies,
+        VacanciesDetailed,
+        VacanciesFilter
 
-}, {
-    // mode: 'modal'
-    //  headerMode: 'float',
-    // headerTransitionPreset: 'uikit'
-});
+    },
+
+            {
+                mode: 'modal'
+                //  headerMode: 'float',
+                // headerTransitionPreset: 'uikit'
+            });
 
 export default createMaterialTopTabNavigator({
     VacanciesStack,

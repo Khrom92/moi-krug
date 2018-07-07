@@ -1,7 +1,10 @@
 import * as types from './vacanciesConstans';
 
 const initialState = {
-    vacanciesList: []
+    vacanciesList: [],
+    filters: {
+        salary: false
+    }
 };
 
 
@@ -27,6 +30,12 @@ export default function (state = initialState, action = {}) {
             return {
                 ...state,
                 vacanciesList: action.payload
+            };
+
+        case types.SAVE_FILTER :
+            return {
+                ...state,
+                filters: action.payload
             };
 
         default:
