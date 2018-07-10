@@ -14,12 +14,23 @@ export function decrement() {
         type: types.DECREMENT
     };
 }
-export function getVacancies() {
+export function getVacancies(link) {
     return (dispatch) => {
-        fetch('/vacancies', {})
+        fetch(link, {})
             .then((data) => {
-                console.log("good");
+                console.log("good all vacancies");
                 dispatch(saveVacancies(data))
+            })
+            .catch(error => console.error(error));
+    }
+}
+
+export function getVacanciesItem(id) {
+    return (dispatch) => {
+        fetch('/vacancies/' + id, {})
+            .then((data) => {
+                console.log("good  vacanciesItem");
+                dispatch(saveItem (data))
             })
             .catch(error => console.error(error));
     }
@@ -42,6 +53,13 @@ const saveFilter = (payload) => {
 const saveVacancies = (payload) => {
     return {
         type: types.SAVE_VACANCIES,
+        payload
+    }
+};
+
+const saveItem = (payload) => {
+    return {
+        type: types.SAVE_ITEM,
         payload
     }
 };

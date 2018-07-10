@@ -92,14 +92,72 @@ class Vacancies extends React.Component {
     };
 
     componentWillMount() {
-        this.props.counterActions.getVacancies();
+
+        let filter = this.props.vacancies.filters;
+        let query = '/vacancies';
+        let count = 0;
+
+        if (!Object.values(filter).every(elem => elem != true)) {
+            query = query+'?';
+
+            for (let key in filter) {
+                let value = filter[key];
+
+                if (value && count === 0) {
+                    count = count+1;
+                    query = query+key+'=true';
+
+                }
+                else if (value && count === 1) {
+                    query =query+'&'+key+'=true'
+
+                }
+
+            }
+
+
+        }
+        console.log(query);
+        this.props.counterActions.getVacancies(query);
     }
 
+    componentWillReceiveProps() {
+        let filter = this.props.vacancies.filters;
+        let query = '/vacancies';
+        let count = 0;
+
+        if (!Object.values(filter).every(elem => elem != true)) {
+            query = query+'?';
+
+            for (let key in filter) {
+                let value = filter[key];
+
+                if (value && count === 0) {
+                    count = count+1;
+                    query = query+key+'=true';
+
+                }
+                else if (value && count === 1) {
+                    query =query+'&'+key+'=true'
+
+                }
+
+            }
+
+
+        }
+        console.log(query);
+        this.props.counterActions.getVacancies(query);
+    }
+
+    //
+    // if (key) {
+    //     return query = query + ('?' + key + '=true')
+    // }
 
     handleTap = (item) => {
-        this.props.navigation.navigate('VacanciesDetailed', { item });
-        // console.log(index);
-        // this.props.counterActions.increment(index);
+        this.props.navigation.navigate('VacanciesDetailed', { id: item });
+         console.log(item);
     };
 
     render() {
@@ -116,9 +174,9 @@ class Vacancies extends React.Component {
                     {
                         vacancies.vacanciesList.map((vacancy, index) => (
 
-                            vacancies.filters.salary ? ( vacancy.salary.salaryUp != null ?
                             <TouchableWithoutFeedback key={index} onPress={() => {
-                                this.handleTap(vacancy)
+                                console.log(vacancy+'');
+                                this.handleTap(vacancy.lastId)
                             }}>
                                 <View style={styles.vacancy}>
                                     <Image style={styles.logo}
@@ -126,7 +184,8 @@ class Vacancies extends React.Component {
                                     <View style={styles.contentStart}>
                                         <Text style={styles.vacancyTitle}>{vacancy.title}</Text>
                                         <Text style={styles.vacancyDicription}>{vacancy.companyName}</Text>
-
+                                        <Text style={styles.vacancyDicription}>{vacancy.remote ? 'удаленка' : 'в офисе'}</Text>
+                                        <Text style={styles.vacancyDicription}>{vacancy.fullDay ? 'полный рабочий день' : 'не полный рабочий день'}</Text>
                                         <Text style={styles.vacancySalary}>
                                             {
                                                 vacancy.salary ?
@@ -141,32 +200,8 @@ class Vacancies extends React.Component {
 
                                     </View>
                                 </View>
-                            </TouchableWithoutFeedback> : "") : (<TouchableWithoutFeedback key={index} onPress={() => {
-                                this.handleTap(vacancy)
-                            }}>
-                                <View style={styles.vacancy}>
-                                    <Image style={styles.logo}
-                                           source={{ uri: vacancy.companyLogo }}/>
-                                    <View style={styles.contentStart}>
-                                        <Text style={styles.vacancyTitle}>{vacancy.title}</Text>
-                                        <Text style={styles.vacancyDicription}>{vacancy.companyName}</Text>
+                            </TouchableWithoutFeedback> ))
 
-                                        <Text style={styles.vacancySalary}>
-                                            {
-                                                vacancy.salary ?
-                                                    [
-                                                        (vacancy.salary.salaryDown ? `От ${vacancy.salary.salaryDown}` : ''),
-                                                        (vacancy.salary.salaryUp ? ` До ${vacancy.salary.salaryUp}` : ''),
-                                                        (vacancy.salary.currency ? ` ${vacancy.salary.currency}` : '')
-                                                    ]
-                                                    : 'Зарплата не указана'
-                                            }
-                                        </Text>
-
-                                    </View>
-                                </View>
-                            </TouchableWithoutFeedback>)
-                        ))
 
                     }
                 </ScrollView>

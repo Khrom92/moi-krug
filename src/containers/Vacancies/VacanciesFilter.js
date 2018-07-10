@@ -37,15 +37,14 @@ export class VacanciesFilter extends React.Component {
         this.props.counterActions.getFilter({filters:{
                 salary: !e.target.checked
             }});
-
-
     };
 
 
     render() {
         const { vacancies } = this.props;
 
-        console.log(" значеинени в фильтре", vacancies.filters.salary);
+        console.log(" значеинени в фильтре salary", vacancies.filters.salary);
+        console.log(" значеинени в фильтре remote", vacancies.filters.remote);
         return (
             <View>
                 <View>
@@ -54,12 +53,30 @@ export class VacanciesFilter extends React.Component {
                         checked={vacancies.filters.salary}
                         onPress={() => {
                             this.props.counterActions.getFilter(
-                                {
-                                    salary: !vacancies.filters.salary
-                                });
-
-                        }}
-
+                                { ...vacancies.filters,
+                                        salary: !vacancies.filters.salary });
+                                        }
+                                }
+                    />
+                    <CheckBox
+                        title='Удаленная работа'
+                        checked={vacancies.filters.remote}
+                        onPress={() => {
+                            this.props.counterActions.getFilter(
+                                { ...vacancies.filters,
+                                        remote: !vacancies.filters.remote});
+                                    }
+                                }
+                    />
+                    <CheckBox
+                        title='полный рабочий день'
+                        checked={vacancies.filters.fullday}
+                        onPress={() => {
+                            this.props.counterActions.getFilter(
+                                { ...vacancies.filters,
+                                    fullday: !vacancies.filters.fullday});
+                                     }
+                                 }
                     />
                 </View>
             </View>
@@ -101,3 +118,5 @@ export default connect(mapStateToProps, mapDispatchToProps)(VacanciesFilter)
 //             salary: !this.state.filters.salary }
 //     })
 // };
+
+// () => {

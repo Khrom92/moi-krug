@@ -2,8 +2,11 @@ import * as types from './vacanciesConstans';
 
 const initialState = {
     vacanciesList: [],
+    vacanciesItem: undefined,
     filters: {
-        salary: false
+        salary: false,
+        remote: false,
+        fullday: false,
     }
 };
 
@@ -36,6 +39,12 @@ export default function (state = initialState, action = {}) {
             return {
                 ...state,
                 filters: action.payload
+            };
+
+        case types.SAVE_ITEM :
+            return {
+                ...state,
+                vacanciesItem: action.payload
             };
 
         default:

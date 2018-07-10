@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Button, Image, TouchableWithoutFeedback } from 'react-native';
 import RNC from 'react-native-css';
 import HTMLStructure from '../../components/HTMLStructure';
+import * as counterActions from "../../rdx/vacancies/vacanciesActions";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 
 const styles = RNC`
@@ -63,10 +66,11 @@ const styles = RNC`
 `;
 
 
-export default class VacanciesDetailed extends React.Component {
+export class VacanciesDetailed extends React.Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            headerTitle: navigation.state.params.item.title,
+            // headerTitle: navigation.state.params.item.title,
+            headerTitle: '',
 
             headerRight: (
                 <Button
@@ -84,11 +88,21 @@ export default class VacanciesDetailed extends React.Component {
         };
     };
 
+    componentWillMount() {
+        const lastId  = this.props.navigation.state.params.id;
+        console.log(lastId);
+        this.props.counterActions.getVacanciesItem(lastId);
+    }
 
 
 
     render() {
-        const vacancyItem = this.props.navigation.state.params.item;
+
+        const  item  = this.props.vacancies.vacanciesItem;
+
+        if (!item)
+            return false;
+
         const monthNames = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
             "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"
         ];
@@ -106,16 +120,16 @@ export default class VacanciesDetailed extends React.Component {
 
                     <View style={styles.salaryBox}>
                         <View>
-                            <Text>{showDate(vacancyItem.date)}</Text>
+                            <Text>{showDate(item.date)}</Text>
                         </View>
                         <View style={styles.salary}>
                             <Text style={styles.salaryText}>
                                 {
-                                    vacancyItem.salary ?
+                                    item.salary ?
                                     [
-                                        (vacancyItem.salary.salaryDown ? `От ${vacancyItem.salary.salaryDown}` : ''),
-                                        (vacancyItem.salary.salaryUp  ?  ` До ${vacancyItem.salary.salaryUp}` : ''),
-                                        (vacancyItem.salary.currency ?  ` ${vacancyItem.salary.currency}` : '')
+                                        (item.salary.salaryDown ? `От ${item.salary.salaryDown}` : ''),
+                                        (item.salary.salaryUp  ?  ` До ${item.salary.salaryUp}` : ''),
+                                        (item.salary.currency ?  ` ${item.salary.currency}` : '')
                                     ]
                                      : 'Зарплата не указана'
                                 }
@@ -125,7 +139,7 @@ export default class VacanciesDetailed extends React.Component {
 
                     </View>
                     <View style={styles.discription}>
-                        <HTMLStructure data={vacancyItem.description}/>
+                        <HTMLStructure data={item.description}/>
 
                     </View>
                 </View>
@@ -148,3 +162,18 @@ export default class VacanciesDetailed extends React.Component {
         </View>;
     }
 }
+
+
+function mapStateToProps(state) {
+    return {
+        vacancies: state.vacancies
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        counterActions: bindActionCreators(counterActions, dispatch)
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(VacanciesDetailed)
