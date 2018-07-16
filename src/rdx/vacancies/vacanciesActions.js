@@ -1,24 +1,12 @@
 import * as types from './vacanciesConstans';
 import fetch from '../../utils/fetch';
 
-export function increment(index) {
 
-    return {
-        type: types.INCREMENT,
-        payload: index
-    };
-}
 
-export function decrement() {
-    return {
-        type: types.DECREMENT
-    };
-}
-
-export function getVacancies(link) {
+export function getVacancies(link, pageNumber) {
     return (dispatch) => {
-        dispatch(saveQuery(link));
-        fetch(link, {})
+        dispatch(savePage(pageNumber));
+        fetch(link + pageNumber, {})
             .then((data) => {
                 console.log("good all vacancies");
                 dispatch(saveVacancies(data))
@@ -52,9 +40,9 @@ const saveFilter = (payload) => {
     }
 };
 
-const saveQuery = (payload) => {
+const savePage = (payload) => {
     return {
-        type: types.SAVE_QUERY,
+        type: types.SAVE_PAGE,
         payload
     }
 };

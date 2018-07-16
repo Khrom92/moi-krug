@@ -9,7 +9,7 @@ const initialState = {
         fullday: false,
         location: null
     },
-    query: '/vacancies',
+    query: '/vacancies?page=',
     pageNum: 1
 };
 
@@ -20,7 +20,7 @@ export default function (state = initialState, action = {}) {
         case types.SAVE_VACANCIES :
             return {
                 ...state,
-                vacanciesList: action.payload
+                vacanciesList:  state.vacanciesList.concat(action.payload)
             };
 
         case types.SAVE_FILTER :
@@ -29,10 +29,10 @@ export default function (state = initialState, action = {}) {
                 filters: action.payload
             };
 
-        case types.SAVE_QUERY :
+        case types.SAVE_PAGE :
             return {
                 ...state,
-                query: action.payload
+                pageNum: action.payload
             };
 
         case types.SAVE_ITEM :

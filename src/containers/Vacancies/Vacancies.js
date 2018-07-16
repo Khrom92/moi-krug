@@ -84,8 +84,8 @@ class Vacancies extends React.Component {
     componentWillMount() {
 
         let query = this.props.vacancies.query;
-
-        this.props.counterActions.getVacancies(query);
+        let page = this.props.vacancies.pageNum;
+        this.props.counterActions.getVacancies(query, page);
         console.log(query);
     }
 
@@ -110,9 +110,8 @@ class Vacancies extends React.Component {
                     let query = this.props.vacancies.query;
                     let page = this.props.vacancies.pageNum;
                     page = page + 1;
-                    query = query + "?" + "page="+ pageNum;
                     console.log(query);
-                    this.props.counterActions.getVacancies(query);
+                    this.props.counterActions.getVacancies(query, page);
 
 
                 }}>

@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0db2f9f6-89cc-4422-8397-a5acd360dcd9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/fetch.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,7 +24,7 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="74">
               <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -39,8 +36,8 @@
       <file leaf-file-name="vacanciesActions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="203">
+              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -51,8 +48,17 @@
       <file leaf-file-name="vacanciesReducers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+            <state relative-caret-position="405">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vacanciesConstans.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -60,8 +66,8 @@
       <file leaf-file-name="Vacancies.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="109" column="58" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
+            <state relative-caret-position="230">
+              <caret line="110" column="60" lean-forward="true" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="60" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -72,8 +78,8 @@
       <file leaf-file-name="VacanciesFilter.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="65" column="40" lean-forward="true" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
+            <state relative-caret-position="226">
+              <caret line="82" column="43" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -93,7 +99,7 @@
       <file leaf-file-name="VacanciesDetailed.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesDetailed.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
+            <state relative-caret-position="480">
               <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -105,7 +111,7 @@
       <file leaf-file-name="Routing.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Routing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="137">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -172,10 +178,10 @@
         <option value="$PROJECT_DIR$/src/components/HTMLStructure.js" />
         <option value="$PROJECT_DIR$/src/utils/fetch.js" />
         <option value="$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js" />
-        <option value="$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js" />
-        <option value="$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js" />
         <option value="$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js" />
+        <option value="$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js" />
         <option value="$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js" />
+        <option value="$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js" />
       </list>
     </option>
   </component>
@@ -195,7 +201,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1280" />
     <option name="height" value="800" />
   </component>
@@ -205,6 +211,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,7 +273,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,7 +334,8 @@
       <workItem from="1530117976423" duration="35661000" />
       <workItem from="1530575273110" duration="4505000" />
       <workItem from="1530652846466" duration="52306000" />
-      <workItem from="1531296169325" duration="21299000" />
+      <workItem from="1531296169325" duration="23980000" />
+      <workItem from="1531749020033" duration="1523000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1530010233960</created>
@@ -358,27 +365,34 @@
       <option name="project" value="LOCAL" />
       <updated>1531251663959</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="change query require and add location filter">
+      <created>1531723096253</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1531723096253</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175053000" />
+    <option name="totallyTimeSpent" value="179257000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13932107" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329602" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.329602" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.329602" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3221393" />
-      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -425,7 +439,8 @@
     <MESSAGE value="added request to sever" />
     <MESSAGE value="added salary filter" />
     <MESSAGE value="added all filters" />
-    <option name="LAST_COMMIT_MESSAGE" value="added all filters" />
+    <MESSAGE value="change query require and add location filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="change query require and add location filter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -708,9 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
           <caret column="7" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -723,7 +735,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesDetailed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
+        <state relative-caret-position="480">
           <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -743,7 +755,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Routing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="137">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -751,16 +763,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="74">
           <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -775,37 +780,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="203">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="109" column="58" selection-start-line="109" selection-start-column="58" selection-end-line="109" selection-end-column="58" />
+        <state relative-caret-position="230">
+          <caret line="110" column="60" lean-forward="true" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="60" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="65" column="40" lean-forward="true" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
+        <state relative-caret-position="226">
+          <caret line="82" column="43" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

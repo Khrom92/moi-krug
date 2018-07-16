@@ -57,26 +57,16 @@ export class VacanciesFilter extends React.Component {
     filterChange = () => {                          //меняем состояния фильтра
         let filter = this.props.vacancies.filters;
         let count = 0;
-        let query = '/vacancies';
+        let queryFromProps = this.props.vacancies.query;
+        let page = this.props.vacancies.pageNum;
+        let query;
         if (!Object.values(filter).every(elem => elem != true) || Object.values(filter).every(elem => typeof elem != typeof String))
         {
-            query = query + '?';
 
             for (let key in filter) {
                 let value = filter[key];
 
-                if (value && count === 0) {
-                    if (key ===  'location') {
-                        count = count + 1;
-                        query = query + key + '=' + value;
-                    }
-                    else {
-                        count = count + 1;
-                        query = query + key + '=true';
-                    }
-
-                }
-                else if (value && count === 1) {
+                 if (value && count === 1) {
                     if (key === 'location') {
                         query = query + '&' + key + '=' + value;
                     }
@@ -90,7 +80,7 @@ export class VacanciesFilter extends React.Component {
 
         }
         console.log(query);
-        this.props.counterActions.getVacancies(query);
+        this.props.counterActions.getVacancies(queryFromProps + page + query, page);
     };
 
 
