@@ -14,8 +14,10 @@ export function decrement() {
         type: types.DECREMENT
     };
 }
+
 export function getVacancies(link) {
     return (dispatch) => {
+        dispatch(saveQuery(link));
         fetch(link, {})
             .then((data) => {
                 console.log("good all vacancies");
@@ -30,7 +32,7 @@ export function getVacanciesItem(id) {
         fetch('/vacancies/' + id, {})
             .then((data) => {
                 console.log("good  vacanciesItem");
-                dispatch(saveItem (data))
+                dispatch(saveItem(data))
             })
             .catch(error => console.error(error));
     }
@@ -50,6 +52,13 @@ const saveFilter = (payload) => {
     }
 };
 
+const saveQuery = (payload) => {
+    return {
+        type: types.SAVE_QUERY,
+        payload
+    }
+};
+
 const saveVacancies = (payload) => {
     return {
         type: types.SAVE_VACANCIES,
@@ -65,53 +74,52 @@ const saveItem = (payload) => {
 };
 
 
-
-    // return {
-    //     type: types.GET_VACANCIES,
-    //     payload: [
-    //         {   id: 1 ,
-    //             title: 'Igorek Developer',
-    //             tags: [0, 2, 7, 9],
-    //             description: 'игорек веб разраб на джиэс',
-    //             salary: "100 000",
-    //             currency: 'руб',
-    //             img: 'https://habrastorage.org/getpro/moikrug/uploads/company/900/507/796/logo/medium_d7a33c4db0022b1a90505ff63e93a652.png',
-    //             companyName: 'азазаза разработка',
-    //             logo: 'public/images/logo.jpg'
-    //             , count: 0,
-    //             specific: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat'
-    //
-    //         },
-    //         {
-    //             id: 2 ,
-    //             title: 'Nikita Developer',
-    //             tags: [1, 3, 5, 7],
-    //             description: 'игорек веб разраб на джиэс',
-    //             salary: "100 000",
-    //             currency: 'руб',
-    //             img: 'https://habrastorage.org/getpro/moikrug/uploads/company/100/005/932/6/logo/medium_24d964779b944f67c9a3abb779ae02b2.jpg',
-    //             companyName: 'азазаза разработка',
-    //             logo: 'public/images/logo.jpg'
-    //             , count: 0,
-    //             specific: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat'
-    //
-    //
-    //         },
-    //         {
-    //             id: 3 ,
-    //             title: 'Serega Developer',
-    //             tags: [0, 4, 8, 12],
-    //             description: 'игорек веб разраб на джиэс',
-    //             salary: "100 000",
-    //             currency: 'руб',
-    //             img: 'https://habrastorage.org/getpro/moikrug/uploads/company/100/005/162/9/logo/medium_48ae1562e638f693972f5eede304b97a.jpeg',
-    //             companyName: 'азазаза разработка',
-    //             logo: 'public/images/logo.jpg'
-    //             , count: 0,
-    //             specific: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat'
-    //
-    //
-    //         }
-    //         ]
-    // };
+// return {
+//     type: types.GET_VACANCIES,
+//     payload: [
+//         {   id: 1 ,
+//             title: 'Igorek Developer',
+//             tags: [0, 2, 7, 9],
+//             description: 'игорек веб разраб на джиэс',
+//             salary: "100 000",
+//             currency: 'руб',
+//             img: 'https://habrastorage.org/getpro/moikrug/uploads/company/900/507/796/logo/medium_d7a33c4db0022b1a90505ff63e93a652.png',
+//             companyName: 'азазаза разработка',
+//             logo: 'public/images/logo.jpg'
+//             , count: 0,
+//             specific: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat'
+//
+//         },
+//         {
+//             id: 2 ,
+//             title: 'Nikita Developer',
+//             tags: [1, 3, 5, 7],
+//             description: 'игорек веб разраб на джиэс',
+//             salary: "100 000",
+//             currency: 'руб',
+//             img: 'https://habrastorage.org/getpro/moikrug/uploads/company/100/005/932/6/logo/medium_24d964779b944f67c9a3abb779ae02b2.jpg',
+//             companyName: 'азазаза разработка',
+//             logo: 'public/images/logo.jpg'
+//             , count: 0,
+//             specific: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat'
+//
+//
+//         },
+//         {
+//             id: 3 ,
+//             title: 'Serega Developer',
+//             tags: [0, 4, 8, 12],
+//             description: 'игорек веб разраб на джиэс',
+//             salary: "100 000",
+//             currency: 'руб',
+//             img: 'https://habrastorage.org/getpro/moikrug/uploads/company/100/005/162/9/logo/medium_48ae1562e638f693972f5eede304b97a.jpeg',
+//             companyName: 'азазаза разработка',
+//             logo: 'public/images/logo.jpg'
+//             , count: 0,
+//             specific: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat'
+//
+//
+//         }
+//         ]
+// };
 

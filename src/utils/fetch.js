@@ -20,7 +20,7 @@ const fetch = function(url, options){
             }
         };
 
-        url = "http://192.168.1.69:3000"+url;
+        url = "http://192.168.1.64:3000"+url;
 
         let queryString = '';
         if (options.data) {

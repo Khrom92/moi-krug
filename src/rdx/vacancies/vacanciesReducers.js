@@ -7,28 +7,16 @@ const initialState = {
         salary: false,
         remote: false,
         fullday: false,
-    }
+        location: null
+    },
+    query: '/vacancies',
+    pageNum: 1
 };
 
 
 export default function (state = initialState, action = {}) {
     switch (action.type) {
-        case types.INCREMENT:
-            return {
-                ...state,
-                vacanciesList: state.vacanciesList.map(item => {
-                    return action.payload === item.id ? {
-                        ...item,
-                        count: item.count + 1
-                    } : item;
-                })
 
-            };
-        case types.DECREMENT:
-            return {
-                ...state,
-                count: state.count - 1
-            };
         case types.SAVE_VACANCIES :
             return {
                 ...state,
@@ -39,6 +27,12 @@ export default function (state = initialState, action = {}) {
             return {
                 ...state,
                 filters: action.payload
+            };
+
+        case types.SAVE_QUERY :
+            return {
+                ...state,
+                query: action.payload
             };
 
         case types.SAVE_ITEM :

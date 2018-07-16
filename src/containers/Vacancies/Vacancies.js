@@ -62,17 +62,7 @@ class Vacancies extends React.Component {
         return {
             headerTitle: '',
 
-            headerRight: (
-                <Button
-                    onPress={() => {
-                        alert('фильр сброшен');
-                    }
-                    }
 
-                    title="Сбросить фильр"
-                    color="rgb(20, 99, 217)"
-                />
-            ),
 
             headerLeft: (
                 <Button
@@ -93,84 +83,39 @@ class Vacancies extends React.Component {
 
     componentWillMount() {
 
-        let filter = this.props.vacancies.filters;
-        let query = '/vacancies';
-        let count = 0;
+        let query = this.props.vacancies.query;
 
-        if (!Object.values(filter).every(elem => elem != true)) {
-            query = query+'?';
-
-            for (let key in filter) {
-                let value = filter[key];
-
-                if (value && count === 0) {
-                    count = count+1;
-                    query = query+key+'=true';
-
-                }
-                else if (value && count === 1) {
-                    query =query+'&'+key+'=true'
-
-                }
-
-            }
-
-
-        }
-        console.log(query);
         this.props.counterActions.getVacancies(query);
+        console.log(query);
     }
 
-    componentWillReceiveProps() {
-        let filter = this.props.vacancies.filters;
-        let query = '/vacancies';
-        let count = 0;
-
-        if (!Object.values(filter).every(elem => elem != true)) {
-            query = query+'?';
-
-            for (let key in filter) {
-                let value = filter[key];
-
-                if (value && count === 0) {
-                    count = count+1;
-                    query = query+key+'=true';
-
-                }
-                else if (value && count === 1) {
-                    query =query+'&'+key+'=true'
-
-                }
-
-            }
-
-
-        }
-        console.log(query);
-        this.props.counterActions.getVacancies(query);
-    }
-
-    //
-    // if (key) {
-    //     return query = query + ('?' + key + '=true')
-    // }
 
     handleTap = (item) => {
         this.props.navigation.navigate('VacanciesDetailed', { id: item });
          console.log(item);
     };
 
+
     render() {
         const { vacancies } = this.props;
 
 
-        console.log(vacancies.filters.salary);
+        // console.log(vacancies.filters.salary);
         // console.log(vacancies);
 
         // const { increment } = this.props.counterActions;
         return (
             <View style={styles.container}>
-                <ScrollView>
+                <ScrollView onMomentumScrollEnd={() => {
+                    let query = this.props.vacancies.query;
+                    let page = this.props.vacancies.pageNum;
+                    page = page + 1;
+                    query = query + "?" + "page="+ pageNum;
+                    console.log(query);
+                    this.props.counterActions.getVacancies(query);
+
+
+                }}>
                     {
                         vacancies.vacanciesList.map((vacancy, index) => (
 
@@ -197,6 +142,7 @@ class Vacancies extends React.Component {
                                                     : 'Зарплата не указана'
                                             }
                                         </Text>
+                                        <Text>{vacancy.location}</Text>
 
                                     </View>
                                 </View>
