@@ -7,10 +7,11 @@ const initialState = {
         salary: false,
         remote: false,
         fullday: false,
-        location: null
+        location: null,
+        pageNum: 1
     },
     query: '/vacancies?page=',
-    pageNum: 1
+
 };
 
 

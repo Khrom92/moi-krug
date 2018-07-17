@@ -31,7 +31,6 @@ const styles = RNC`
     }
 `;
 export class VacanciesFilter extends React.Component {
-
     static navigationOptions = ({ navigation }) => {
         return {
             headerTitle: 'Фильтр вакансий',
@@ -54,7 +53,7 @@ export class VacanciesFilter extends React.Component {
 
 
 
-    filterChange = () => {                          //меняем состояния фильтра
+    applyChange = () => {                          //меняем состояния фильтра
         let filter = this.props.vacancies.filters;
         let count = 0;
         let queryFromProps = this.props.vacancies.query;
@@ -83,6 +82,17 @@ export class VacanciesFilter extends React.Component {
         this.props.counterActions.getVacancies(queryFromProps + page + query, page);
     };
 
+    filterChange = (e) => {
+        const { vacancies } = this.props;
+
+        this.props.counterActions.getFilter(
+            {
+                ...vacancies.filters,
+                remote: !e.target.value
+            });
+
+    };
+
 
     render() {
         const { vacancies } = this.props;
@@ -98,38 +108,17 @@ export class VacanciesFilter extends React.Component {
                     <CheckBox
                         title='Зарплата указана'
                         checked={vacancies.filters.salary}
-                        onPress={() => {
-                            this.props.counterActions.getFilter(
-                                {
-                                    ...vacancies.filters,
-                                    salary: !vacancies.filters.salary
-                                });
-                        }
-                        }
+                        onPress={this.filterChange}
                     />
                     <CheckBox
                         title='Удаленная работа'
                         checked={vacancies.filters.remote}
-                        onPress={() => {
-                            this.props.counterActions.getFilter(
-                                {
-                                    ...vacancies.filters,
-                                    remote: !vacancies.filters.remote
-                                });
-                        }
-                        }
+                        onPress={this.filterChange}
                     />
                     <CheckBox
                         title='полный рабочий день'
                         checked={vacancies.filters.fullday}
-                        onPress={() => {
-                            this.props.counterActions.getFilter(
-                                {
-                                    ...vacancies.filters,
-                                    fullday: !vacancies.filters.fullday
-                                });
-                        }
-                        }
+                        onPress={this.filterChange}
                     />
 
 
@@ -166,7 +155,7 @@ export class VacanciesFilter extends React.Component {
 
                     }}>
                         <Button
-                            onPress={this.filterChange}
+                            onPress={this.applyChange}
                             color="rgb(255, 255, 255)"
                             title="OK"
                         />

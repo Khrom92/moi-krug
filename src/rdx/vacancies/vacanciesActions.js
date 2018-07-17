@@ -1,5 +1,6 @@
 import * as types from './vacanciesConstans';
 import fetch from '../../utils/fetch';
+import queryEditor from '../../utils/queryEditor';
 
 
 

@@ -83,9 +83,8 @@ class Vacancies extends React.Component {
 
     componentWillMount() {
 
-        let query = this.props.vacancies.query;
-        let page = this.props.vacancies.pageNum;
-        this.props.counterActions.getVacancies(query, page);
+        let { query, pageNum } = this.props.vacancies;
+        this.props.counterActions.getVacancies(query, pageNum);
         console.log(query);
     }
 
@@ -109,7 +108,7 @@ class Vacancies extends React.Component {
                 <ScrollView onMomentumScrollEnd={() => {
                     let query = this.props.vacancies.query;
                     let page = this.props.vacancies.pageNum;
-                    page = page + 1;
+                    page  += 1;
                     console.log(query);
                     this.props.counterActions.getVacancies(query, page);
 
