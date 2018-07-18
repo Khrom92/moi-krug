@@ -87,20 +87,19 @@ class Vacancies extends React.Component {
         this.props.counterActions.getVacancies(filters);
     }
 
-    pageScroll() {
+    pageScroll = () => {
         let { vacancies } = this.props;
 
-        let page = vacancies.filters.pageNum;
-        page += 1;
+        let page = vacancies.filters.page;
+        console.log(vacancies.filters.page);
 
-        this.props.counterActions.getFilter(
-            {
-                ...vacancies.filters,
-                pageNum: page
-            });
-        let { filters } = this.props.vacancies;
-        console.log(filters);
-        this.props.counterActions.getVacancies(filters);
+        pageNum = page + 1;
+        console.log(vacancies.filters.page);
+
+        this.props.counterActions.scrollGetVacancies(vacancies.filters, {
+            ...vacancies.filters,
+            page: pageNum
+        });
 
 
     }

@@ -4,9 +4,12 @@ const fetch = function(url, options){
     return new Promise(async (resolve, reject) => {
         var request = new XMLHttpRequest();
         request.onreadystatechange = (e) => {
+
             if (request.readyState !== 4) {
                 return;
             }
+
+            // console.log('for request ' + url, request.responseText);
 
             if (request.status === 200) {
                 try {
@@ -26,7 +29,7 @@ const fetch = function(url, options){
         if (options.data) {
 
             Object.keys(options.data).forEach(function(key){
-                url = url + (queryString.length ? '' : '&') + key + encodeURIComponent(options.data[key]);
+                url = url + (queryString.length ? '&' : '?') + key + '=' + encodeURIComponent(options.data[key]);
             });
         }
 
@@ -46,10 +49,10 @@ const fetch = function(url, options){
         catch(error){}
 
         if (sessionId) {
-            request.setRequestHeader('Cookie', `SID=${sessionId};`);
+            request.setRequestHeader('Cookie', `SID=${sessionId};language=ru; extension-closed=true; uid=891113; gid=1; user_id=891113; uname=6LMS+; uemail=gerasimow.nikita%40gmail.com; lp=lp%2Fsave; lp_session_id=12d456d8; tmr_detect=0%7C1529591987166`);
         }
 
-// var body = options.body ? JSON.stringify(options.body) : undefined;
+        // var body = options.body ? JSON.stringify(options.body) : undefined;
         let body = '';
         if (options.body) {
             let first = true;

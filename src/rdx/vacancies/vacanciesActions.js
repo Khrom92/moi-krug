@@ -4,15 +4,26 @@ import queryEditor from '../../utils/queryEditor';
 
 
 
-export function getVacancies(link, pageNumber) {
+export function getVacancies(filter) {
+
     return (dispatch) => {
-        dispatch(savePage(pageNumber));
-        fetch(link + pageNumber, {})
+        console.log(queryEditor(filter));
+        fetch('/vacancies/'+ queryEditor(filter), {})
             .then((data) => {
                 console.log("good all vacancies");
                 dispatch(saveVacancies(data))
             })
             .catch(error => console.error(error));
+    }
+}
+
+export function scrollGetVacancies(filter) {
+    return (dispatch) => {
+        dispatch(saveFilter(filter));
+
+        setTimeout(() => {
+            dispatch(getVacancies(filter))
+        }, 1000)
     }
 }
 
@@ -33,6 +44,26 @@ export function getFilter(data) {
     }
 
 }
+
+export function getVacanciesAfterFilter(filter) {
+    return (dispatch) => {
+        console.log(queryEditor(filter));
+
+        fetch('/vacancies/'+ queryEditor(filter), {})
+            .then((data) => {
+                console.log("good all vacancies");
+                dispatch(saveVacanciesAfterFilter(data))
+            })
+            .catch(error => console.error(error));
+    }
+}
+
+const saveVacanciesAfterFilter = (payload) => {
+    return {
+        type: types.SAVE_VACANCIES_AFTER_FILTER,
+        payload
+    }
+};
 
 const saveFilter = (payload) => {
     return {

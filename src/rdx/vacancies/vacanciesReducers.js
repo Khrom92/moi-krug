@@ -8,9 +8,8 @@ const initialState = {
         remote: false,
         fullday: false,
         location: null,
-        pageNum: 1
+        page: 1
     },
-    query: '/vacancies?page=',
 
 };
 
@@ -22,6 +21,13 @@ export default function (state = initialState, action = {}) {
             return {
                 ...state,
                 vacanciesList:  state.vacanciesList.concat(action.payload)
+            };
+
+
+        case types.SAVE_VACANCIES_AFTER_FILTER :
+            return {
+                ...state,
+                vacanciesList:  action.payload
             };
 
         case types.SAVE_FILTER :

@@ -5,3 +5,4 @@ export const SAVE_FILTER = 'SAVE_FILTER';
 export const GET_FILTER = 'GET_FILTER';
 export const SAVE_ITEM = 'SAVE_ITEM';
 export const SAVE_PAGE = 'SAVE_PAGE';
+export const SAVE_VACANCIES_AFTER_FILTER = 'SAVE_VACANCIES_AFTER_FILTER';
