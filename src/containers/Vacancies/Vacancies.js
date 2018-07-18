@@ -83,9 +83,26 @@ class Vacancies extends React.Component {
 
     componentWillMount() {
 
-        let { query, pageNum } = this.props.vacancies;
-        this.props.counterActions.getVacancies(query, pageNum);
-        console.log(query);
+        let { filters } = this.props.vacancies;
+        this.props.counterActions.getVacancies(filters);
+    }
+
+    pageScroll() {
+        let { vacancies } = this.props;
+
+        let page = vacancies.filters.pageNum;
+        page += 1;
+
+        this.props.counterActions.getFilter(
+            {
+                ...vacancies.filters,
+                pageNum: page
+            });
+        let { filters } = this.props.vacancies;
+        console.log(filters);
+        this.props.counterActions.getVacancies(filters);
+
+
     }
 
 
@@ -105,15 +122,7 @@ class Vacancies extends React.Component {
         // const { increment } = this.props.counterActions;
         return (
             <View style={styles.container}>
-                <ScrollView onMomentumScrollEnd={() => {
-                    let query = this.props.vacancies.query;
-                    let page = this.props.vacancies.pageNum;
-                    page  += 1;
-                    console.log(query);
-                    this.props.counterActions.getVacancies(query, page);
-
-
-                }}>
+                <ScrollView onMomentumScrollEnd={this.pageScroll}>
                     {
                         vacancies.vacanciesList.map((vacancy, index) => (
 
