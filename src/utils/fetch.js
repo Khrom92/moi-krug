@@ -1,6 +1,6 @@
 import { AsyncStorage } from "react-native";
 
-const fetch = function(url, options){
+const fetch = function(url, options = {}){
     return new Promise(async (resolve, reject) => {
         var request = new XMLHttpRequest();
         request.onreadystatechange = (e) => {
@@ -29,10 +29,11 @@ const fetch = function(url, options){
         if (options.data) {
 
             Object.keys(options.data).forEach(function(key){
-                url = url + (queryString.length ? '&' : '?') + key + '=' + encodeURIComponent(options.data[key]);
+                queryString = queryString + (queryString.length ? '&' : '?') + key + '=' + encodeURIComponent(options.data[key]);
             });
-        }
 
+        }
+        console.log(url + queryString);
         request.open(options.method || 'GET', url + queryString);
 
         if (options.method === 'POST') {

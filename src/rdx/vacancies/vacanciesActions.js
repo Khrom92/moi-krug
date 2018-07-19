@@ -3,14 +3,28 @@ import fetch from '../../utils/fetch';
 import queryEditor from '../../utils/queryEditor';
 
 
+export function getVacanciesOnMount() {
+
+    return (dispatch) => {
+        fetch('/vacancies/')
+            .then((data) => {
+
+                console.log("good all vacancies");
+                console.log(Object.keys(data));
+                dispatch(saveVacancies(data))
+            })
+            .catch(error => console.error(error));
+    }
+}
 
 export function getVacancies(filter) {
 
     return (dispatch) => {
-        console.log(queryEditor(filter));
-        fetch('/vacancies/'+ queryEditor(filter), {})
+        fetch('/vacancies/', { data: filter })
             .then((data) => {
+
                 console.log("good all vacancies");
+                console.log(Object.keys(data));
                 dispatch(saveVacancies(data))
             })
             .catch(error => console.error(error));
@@ -21,9 +35,7 @@ export function scrollGetVacancies(filter) {
     return (dispatch) => {
         dispatch(saveFilter(filter));
 
-        setTimeout(() => {
-            dispatch(getVacancies(filter))
-        }, 1000)
+        dispatch(getVacancies(filter));
     }
 }
 
@@ -45,13 +57,22 @@ export function getFilter(data) {
 
 }
 
+export const saveFilter = (payload) => {
+    return {
+        type: types.SAVE_FILTER,
+        payload
+    }
+};
+
 export function getVacanciesAfterFilter(filter) {
     return (dispatch) => {
-        console.log(queryEditor(filter));
+        // console.log(queryEditor(filter));
 
-        fetch('/vacancies/'+ queryEditor(filter), {})
+        fetch('/vacancies/', { data: filter })
             .then((data) => {
                 console.log("good all vacancies");
+                console.log(Object.keys(data));
+
                 dispatch(saveVacanciesAfterFilter(data))
             })
             .catch(error => console.error(error));
@@ -65,19 +86,6 @@ const saveVacanciesAfterFilter = (payload) => {
     }
 };
 
-const saveFilter = (payload) => {
-    return {
-        type: types.SAVE_FILTER,
-        payload
-    }
-};
-
-const savePage = (payload) => {
-    return {
-        type: types.SAVE_PAGE,
-        payload
-    }
-};
 
 const saveVacancies = (payload) => {
     return {

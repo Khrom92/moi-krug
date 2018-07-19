@@ -4,11 +4,11 @@ const initialState = {
     vacanciesList: [],
     vacanciesItem: undefined,
     filters: {
+        page: 1,
         salary: false,
         remote: false,
         fullday: false,
-        location: null,
-        page: 1
+        location: ''
     },
 
 };

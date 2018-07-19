@@ -83,8 +83,8 @@ class Vacancies extends React.Component {
 
     componentWillMount() {
 
-        let { filters } = this.props.vacancies;
-        this.props.vacanciesActions.getVacancies(filters);
+        this.props.vacanciesActions.getVacanciesOnMount();
+        console.log('комопнент загружен');
     }
 
     pageScroll = () => {
@@ -96,7 +96,7 @@ class Vacancies extends React.Component {
         pageNum = page + 1;
         console.log(vacancies.filters.page);
 
-        this.props.vacanciesActions.scrollGetVacancies(vacancies.filters, {
+        this.props.vacanciesActions.scrollGetVacancies({
             ...vacancies.filters,
             page: pageNum
         });

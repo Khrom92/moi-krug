@@ -29,11 +29,11 @@ const styles = RNC`
         padding: 10px; 
         
     }
-    containerButton { 
-        backgroundColor: "rgb(86, 119, 252)",
-        borderRadius: 20,
-        width: "50%",
-        marginBottom: 10
+    containerButtonFilter { 
+        background-color: rgb(86, 119, 252);
+        border-radius: 20px;
+        width: 50%;
+        margin-bottom: 10px;
     }
     
 `;
@@ -61,13 +61,16 @@ export class VacanciesFilter extends React.Component {
 
 
     applyChange = () => {
-        const { filters } = this.props.vacancies;
-        this.props.vacanciesActions.getVacanciesAfterFilter(filters);
+        const { vacancies } = this.props;
+        this.props.vacanciesActions.getVacanciesAfterFilter({
+            ...vacancies.filters,
+            page: 1
+        });
     };
 
     salaryChange = (e) => {
         const { vacancies } = this.props;
-        this.props.vacanciesActions.getFilter(
+        this.props.vacanciesActions.saveFilter(
             {
                 ...vacancies.filters,
                 salary: !vacancies.filters.salary
@@ -76,7 +79,7 @@ export class VacanciesFilter extends React.Component {
     };
     remoteChange = (e) => {
         const { vacancies } = this.props;
-        this.props.vacanciesActions.getFilter(
+        this.props.vacanciesActions.saveFilter(
             {
                 ...vacancies.filters,
                 remote: !vacancies.filters.remote
@@ -85,7 +88,7 @@ export class VacanciesFilter extends React.Component {
     };
     fullDayChange = (e) => {
         const { vacancies } = this.props;
-        this.props.vacanciesActions.getFilter(
+        this.props.vacanciesActions.saveFilter(
             {
                 ...vacancies.filters,
                 fullday: !vacancies.filters.fullday
@@ -96,7 +99,7 @@ export class VacanciesFilter extends React.Component {
 
     render() {
         const { vacancies } = this.props;
-        const city = [null, 'Москва', "Санкт-Петербург", "Омск", "Новосибирск", "Оренбуг", "Калининград"];
+        const city = [false, 'Москва', "Санкт-Петербург", "Омск", "Новосибирск", "Оренбуг", "Калининград"];
 
         console.log(" значеинени в фильтре salary", vacancies.filters.salary);
         console.log(" значеинени в фильтре remote", vacancies.filters.remote);
@@ -129,7 +132,7 @@ export class VacanciesFilter extends React.Component {
                         selectedValue={vacancies.filters.location}
                         style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}
                         onValueChange={(itemValue, itemIndex) => {
-                            this.props.vacanciesActions.getFilter(
+                            this.props.vacanciesActions.saveFilter(
                                 {
                                     ...vacancies.filters,
                                     location: itemValue
@@ -137,8 +140,8 @@ export class VacanciesFilter extends React.Component {
                         }}>
 
                         {city.map((elem, index) => {
-                            if (elem === null) {
-                                return (<Picker.Item label={'Город не выбран'} value={null}/>)
+                            if (elem === false) {
+                                return (<Picker.Item label={'Город не выбран'} value={''}/>)
                             }
                             else {
                                 return <Picker.Item label={elem} value={elem}/>
@@ -147,7 +150,7 @@ export class VacanciesFilter extends React.Component {
                     </Picker>
                 </View>
                 <View style={styles.feedbackWrapper}>
-                    <View style={styles.containerButton}>
+                    <View style={styles.containerButtonFilter}>
                         <Button
                             onPress={this.applyChange}
                             color="rgb(255, 255, 255)"

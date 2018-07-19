@@ -61,10 +61,10 @@ const styles = RNC`
         display: flex;
     }
      containerButton { 
-         backgroundColor: "rgb(86, 119, 252)",
-         borderRadius: 20,
-         width: "40%",
-         marginBottom: 10,
+         background-color: rgb(86, 119, 252);
+         border-radius: 20px;
+         width: 700%;
+         margin-bottom: 10px;
     }
     
     
