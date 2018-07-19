@@ -4,7 +4,7 @@ import { CheckBox } from 'react-native-elements'
 import ModalDropdown from 'react-native-modal-dropdown';
 import RNC from 'react-native-css';
 import Vacancies from "./Vacancies";
-import * as counterActions from "../../rdx/vacancies/vacanciesActions";
+import * as vacanciesActions from "../../rdx/vacancies/vacanciesActions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
@@ -29,6 +29,13 @@ const styles = RNC`
         padding: 10px; 
         
     }
+    containerButton { 
+        backgroundColor: "rgb(86, 119, 252)",
+        borderRadius: 20,
+        width: "50%",
+        marginBottom: 10
+    }
+    
 `;
 export class VacanciesFilter extends React.Component {
     static navigationOptions = ({ navigation }) => {
@@ -55,12 +62,12 @@ export class VacanciesFilter extends React.Component {
 
     applyChange = () => {
         const { filters } = this.props.vacancies;
-        this.props.counterActions.getVacanciesAfterFilter(filters);
+        this.props.vacanciesActions.getVacanciesAfterFilter(filters);
     };
 
     salaryChange = (e) => {
         const { vacancies } = this.props;
-        this.props.counterActions.getFilter(
+        this.props.vacanciesActions.getFilter(
             {
                 ...vacancies.filters,
                 salary: !vacancies.filters.salary
@@ -69,7 +76,7 @@ export class VacanciesFilter extends React.Component {
     };
     remoteChange = (e) => {
         const { vacancies } = this.props;
-        this.props.counterActions.getFilter(
+        this.props.vacanciesActions.getFilter(
             {
                 ...vacancies.filters,
                 remote: !vacancies.filters.remote
@@ -78,7 +85,7 @@ export class VacanciesFilter extends React.Component {
     };
     fullDayChange = (e) => {
         const { vacancies } = this.props;
-        this.props.counterActions.getFilter(
+        this.props.vacanciesActions.getFilter(
             {
                 ...vacancies.filters,
                 fullday: !vacancies.filters.fullday
@@ -122,7 +129,7 @@ export class VacanciesFilter extends React.Component {
                         selectedValue={vacancies.filters.location}
                         style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}
                         onValueChange={(itemValue, itemIndex) => {
-                            this.props.counterActions.getFilter(
+                            this.props.vacanciesActions.getFilter(
                                 {
                                     ...vacancies.filters,
                                     location: itemValue
@@ -140,13 +147,7 @@ export class VacanciesFilter extends React.Component {
                     </Picker>
                 </View>
                 <View style={styles.feedbackWrapper}>
-                    <View style={{
-                        backgroundColor: "rgb(86, 119, 252)",
-                        borderRadius: 20,
-                        width: "50%",
-                        marginBottom: 10
-
-                    }}>
+                    <View style={styles.containerButton}>
                         <Button
                             onPress={this.applyChange}
                             color="rgb(255, 255, 255)"
@@ -171,7 +172,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        counterActions: bindActionCreators(counterActions, dispatch)
+        vacanciesActions: bindActionCreators(vacanciesActions, dispatch)
     }
 }
 
@@ -180,7 +181,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(VacanciesFilter)
 
 // filterConfirm = (e) => {                    //передаем состояния фильтра
 //
-//     this.props.counterActions.getFilter({filters:{
+//     this.props.vacanciesActions.getFilter({filters:{
 //         salary: event.target.checked
 //         }});
 // };

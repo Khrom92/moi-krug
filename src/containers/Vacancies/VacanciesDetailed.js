@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Button, Image, TouchableWithoutFeedback } from 'react-native';
 import RNC from 'react-native-css';
 import HTMLStructure from '../../components/HTMLStructure';
-import * as counterActions from "../../rdx/vacancies/vacanciesActions";
+import * as vacanciesActions from "../../rdx/vacancies/vacanciesActions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
@@ -60,6 +60,12 @@ const styles = RNC`
     contentContainerStyle {
         display: flex;
     }
+     containerButton { 
+         backgroundColor: "rgb(86, 119, 252)",
+         borderRadius: 20,
+         width: "40%",
+         marginBottom: 10,
+    }
     
     
     
@@ -89,16 +95,15 @@ export class VacanciesDetailed extends React.Component {
     };
 
     componentWillMount() {
-        const lastId  = this.props.navigation.state.params.id;
+        const lastId = this.props.navigation.state.params.id;
         console.log(lastId);
-        this.props.counterActions.getVacanciesItem(lastId);
+        this.props.vacanciesActions.getVacanciesItem(lastId);
     }
-
 
 
     render() {
 
-        const  item  = this.props.vacancies.vacanciesItem;
+        const item = this.props.vacancies.vacanciesItem;
 
         if (!item)
             return false;
@@ -126,12 +131,12 @@ export class VacanciesDetailed extends React.Component {
                             <Text style={styles.salaryText}>
                                 {
                                     item.salary ?
-                                    [
-                                        (item.salary.salaryDown ? `От ${item.salary.salaryDown}` : ''),
-                                        (item.salary.salaryUp  ?  ` До ${item.salary.salaryUp}` : ''),
-                                        (item.salary.currency ?  ` ${item.salary.currency}` : '')
-                                    ]
-                                     : 'Зарплата не указана'
+                                        [
+                                            (item.salary.salaryDown ? `От ${item.salary.salaryDown}` : ''),
+                                            (item.salary.salaryUp ? ` До ${item.salary.salaryUp}` : ''),
+                                            (item.salary.currency ? ` ${item.salary.currency}` : '')
+                                        ]
+                                        : 'Зарплата не указана'
                                 }
                             </Text>
                         </View>
@@ -144,13 +149,7 @@ export class VacanciesDetailed extends React.Component {
                     </View>
                 </View>
                 <View style={styles.feedbackWrapper}>
-                    <View style={{
-                        backgroundColor: "rgb(86, 119, 252)",
-                        borderRadius: 20,
-                        width: "40%",
-                        marginBottom: 10,
-
-                    }}>
+                    <View style={styles.containerButton}>
                         <Button
                             onPress={onPress}
                             color="rgb(255, 255, 255)"
@@ -172,7 +171,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        counterActions: bindActionCreators(counterActions, dispatch)
+        vacanciesActions: bindActionCreators(vacanciesActions, dispatch)
     }
 }
 

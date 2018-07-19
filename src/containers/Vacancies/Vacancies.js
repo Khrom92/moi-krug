@@ -5,7 +5,7 @@ import { createMaterialTopTabNavigator, StackNavigator } from 'react-navigation'
 import VacanciesDetailed from "./VacanciesDetailed";
 import VacanciesFilter from "./VacanciesFilter";
 import { bindActionCreators } from 'redux';
-import * as counterActions from '../../rdx/vacancies/vacanciesActions';
+import * as vacanciesActions from '../../rdx/vacancies/vacanciesActions';
 
 import { connect } from 'react-redux';
 
@@ -84,7 +84,7 @@ class Vacancies extends React.Component {
     componentWillMount() {
 
         let { filters } = this.props.vacancies;
-        this.props.counterActions.getVacancies(filters);
+        this.props.vacanciesActions.getVacancies(filters);
     }
 
     pageScroll = () => {
@@ -96,7 +96,7 @@ class Vacancies extends React.Component {
         pageNum = page + 1;
         console.log(vacancies.filters.page);
 
-        this.props.counterActions.scrollGetVacancies(vacancies.filters, {
+        this.props.vacanciesActions.scrollGetVacancies(vacancies.filters, {
             ...vacancies.filters,
             page: pageNum
         });
@@ -118,7 +118,7 @@ class Vacancies extends React.Component {
         // console.log(vacancies.filters.salary);
         // console.log(vacancies);
 
-        // const { increment } = this.props.counterActions;
+        // const { increment } = this.props.vacanciesActions;
         return (
             <View style={styles.container}>
                 <ScrollView onMomentumScrollEnd={this.pageScroll}>
@@ -165,7 +165,7 @@ class Vacancies extends React.Component {
 
 // export default connect((state) => ({
 //     vacancies: state.vacancies
-// }), dispatch => {bindActionCreators(CounterActions, dispatch)
+// }), dispatch => {bindActionCreators(vacanciesActions, dispatch)
 //
 // })(Vacancies)
 
@@ -177,7 +177,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        counterActions: bindActionCreators(counterActions, dispatch)
+        vacanciesActions: bindActionCreators(vacanciesActions, dispatch)
     }
 }
 
