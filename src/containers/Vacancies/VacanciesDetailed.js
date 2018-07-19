@@ -96,7 +96,6 @@ export class VacanciesDetailed extends React.Component {
 
     componentWillMount() {
         const lastId = this.props.navigation.state.params.id;
-        console.log(lastId);
         this.props.vacanciesActions.getVacanciesItem(lastId);
     }
 

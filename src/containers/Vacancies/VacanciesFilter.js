@@ -100,10 +100,6 @@ export class VacanciesFilter extends React.Component {
     render() {
         const { vacancies } = this.props;
         const city = [false, 'Москва', "Санкт-Петербург", "Омск", "Новосибирск", "Оренбуг", "Калининград"];
-
-        console.log(" значеинени в фильтре salary", vacancies.filters.salary);
-        console.log(" значеинени в фильтре remote", vacancies.filters.remote);
-        console.log(" значеинени в фильтре location", vacancies.filters.location);
         return (
             <View style={{ backgroundColor: 'rgb(255, 255, 255)' }}>
                 <View>
@@ -182,20 +178,3 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(VacanciesFilter)
 
 
-// filterConfirm = (e) => {                    //передаем состояния фильтра
-//
-//     this.props.vacanciesActions.getFilter({filters:{
-//         salary: event.target.checked
-//         }});
-// };
-// filterConfirm;
-// ...state.filters, salary: state.filters.salary
-
-// filterChange = () => {                          //меняем состояния фильтра
-//     this.setState({filter:{
-//             ...this.state.filters,
-//             salary: !this.state.filters.salary }
-//     })
-// };
-
-// () => {

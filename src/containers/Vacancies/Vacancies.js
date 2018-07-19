@@ -84,17 +84,13 @@ class Vacancies extends React.Component {
     componentWillMount() {
 
         this.props.vacanciesActions.getVacanciesOnMount();
-        console.log('комопнент загружен');
     }
 
     pageScroll = () => {
         let { vacancies } = this.props;
-
         let page = vacancies.filters.page;
-        console.log(vacancies.filters.page);
 
         pageNum = page + 1;
-        console.log(vacancies.filters.page);
 
         this.props.vacanciesActions.scrollGetVacancies({
             ...vacancies.filters,
@@ -102,23 +98,16 @@ class Vacancies extends React.Component {
         });
 
 
-    }
-
+    };
 
     handleTap = (item) => {
         this.props.navigation.navigate('VacanciesDetailed', { id: item });
-         console.log(item);
     };
 
 
     render() {
         const { vacancies } = this.props;
 
-
-        // console.log(vacancies.filters.salary);
-        // console.log(vacancies);
-
-        // const { increment } = this.props.vacanciesActions;
         return (
             <View style={styles.container}>
                 <ScrollView onMomentumScrollEnd={this.pageScroll}>
@@ -126,7 +115,6 @@ class Vacancies extends React.Component {
                         vacancies.vacanciesList.map((vacancy, index) => (
 
                             <TouchableWithoutFeedback key={index} onPress={() => {
-                                console.log(vacancy+'');
                                 this.handleTap(vacancy.lastId)
                             }}>
                                 <View style={styles.vacancy}>
@@ -163,11 +151,6 @@ class Vacancies extends React.Component {
 }
 
 
-// export default connect((state) => ({
-//     vacancies: state.vacancies
-// }), dispatch => {bindActionCreators(vacanciesActions, dispatch)
-//
-// })(Vacancies)
 
 function mapStateToProps(state) {
     return {

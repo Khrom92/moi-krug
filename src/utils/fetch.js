@@ -9,8 +9,6 @@ const fetch = function(url, options = {}){
                 return;
             }
 
-            // console.log('for request ' + url, request.responseText);
-
             if (request.status === 200) {
                 try {
                     const data = JSON.parse(request.responseText);
@@ -33,7 +31,6 @@ const fetch = function(url, options = {}){
             });
 
         }
-        console.log(url + queryString);
         request.open(options.method || 'GET', url + queryString);
 
         if (options.method === 'POST') {
