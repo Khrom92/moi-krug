@@ -3,11 +3,6 @@ import { StyleSheet, Text, View, ScrollView, Button, Image, TouchableWithoutFeed
 import RNC from 'react-native-css';
 
 const styles = RNC`
-    containe {
-        margin: 2px;
-        background-color: #f7f7f7;
-        
-    }
     salaryBox {
         background-color: rgb(230,230,230); 
         padding: 10px;
@@ -24,8 +19,7 @@ const styles = RNC`
         color: #68c07b;
     }
     description {
-        pading: 0;
-        margin: 0px;
+        margin-top: 12px;
     }
     `;
 
@@ -45,7 +39,7 @@ export default class HTMLStructure extends React.Component {
             }
             if (data.name === 'p') {
 
-                return <View style={{ marginTop: 12 }}>
+                return <View>
                     <Text>
                         {data.children && data.children.map((elem, index) => {
                             return (<HTMLStructure data={elem} key={index}/>)

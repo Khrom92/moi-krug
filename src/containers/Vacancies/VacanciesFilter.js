@@ -62,13 +62,13 @@ export class VacanciesFilter extends React.Component {
 
     applyChange = () => {
         const { vacancies } = this.props;
-        this.props.vacanciesActions.getVacanciesAfterFilter({
+        this.props.vacanciesActions.getVacancies({
             ...vacancies.filters,
             page: 1
-        });
+        }, true);
     };
 
-    salaryChange = (e) => {
+    salaryChange = () => {
         const { vacancies } = this.props;
         this.props.vacanciesActions.saveFilter(
             {
@@ -77,7 +77,7 @@ export class VacanciesFilter extends React.Component {
             });
 
     };
-    remoteChange = (e) => {
+    remoteChange = () => {
         const { vacancies } = this.props;
         this.props.vacanciesActions.saveFilter(
             {
@@ -86,7 +86,7 @@ export class VacanciesFilter extends React.Component {
             });
 
     };
-    fullDayChange = (e) => {
+    fullDayChange = () => {
         const { vacancies } = this.props;
         this.props.vacanciesActions.saveFilter(
             {

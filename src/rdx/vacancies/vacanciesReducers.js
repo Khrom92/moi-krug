@@ -20,11 +20,12 @@ export default function (state = initialState, action = {}) {
         case types.SAVE_VACANCIES :
             return {
                 ...state,
-                vacanciesList:  state.vacanciesList.concat(action.payload)
+                vacanciesList: [...state.vacanciesList,
+                    ...action.payload]
             };
 
 
-        case types.SAVE_VACANCIES_AFTER_FILTER :
+        case types.CLEAR_VACANCIES :
             return {
                 ...state,
                 vacanciesList:  action.payload

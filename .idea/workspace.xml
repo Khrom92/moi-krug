@@ -3,12 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="0db2f9f6-89cc-4422-8397-a5acd360dcd9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HTMLStructure.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HTMLStructure.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Vacancies/Home.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Vacancies/VacanciesDetailed.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Vacancies/VacanciesDetailed.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Vacancies/VacanciesItem.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/fetch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/fetch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/queryEditor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,8 +30,8 @@
       <file leaf-file-name="vacanciesActions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+            <state relative-caret-position="382">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -37,8 +42,8 @@
       <file leaf-file-name="vacanciesReducers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+            <state relative-caret-position="213">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -55,6 +60,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="vacanciesConstans.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="reducers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/rdx/reducers.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,23 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vacancies.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="117" selection-start-line="117" selection-end-line="117" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="VacanciesFilter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="101" column="107" selection-start-line="101" selection-start-column="107" selection-end-line="101" selection-end-column="107" />
+            <state relative-caret-position="413">
+              <caret line="83" column="37" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -88,23 +90,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VacanciesDetailed.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesDetailed.js">
+      <file leaf-file-name="HTMLStructure.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/HTMLStructure.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="120" column="99" lean-forward="true" selection-start-line="120" selection-start-column="99" selection-end-line="120" selection-end-column="99" />
+            <state relative-caret-position="-79">
+              <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fetch.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/fetch.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -112,8 +105,32 @@
       <file leaf-file-name="Routing.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Routing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="17">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vacancies.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="117" column="31" lean-forward="true" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VacanciesDetailed.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesDetailed.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-500">
+              <caret line="112" column="26" lean-forward="true" selection-start-line="112" selection-start-column="26" selection-end-line="112" selection-end-column="26" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -134,7 +151,6 @@
     <findStrings>
       <find>counterAction</find>
       <find>vacancy</find>
-      <find>item</find>
       <find>componentWillMount</find>
       <find>navigation</find>
       <find>fetch</find>
@@ -149,11 +165,14 @@
       <find>consol</find>
       <find>counterActions</find>
       <find>console.log</find>
+      <find>containe</find>
+      <find>item</find>
     </findStrings>
     <replaceStrings>
       <replace>vacancyItem</replace>
       <replace>item</replace>
       <replace>vacanciesActions</replace>
+      <replace>vacanciesItem</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -169,7 +188,6 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/containers/Home.js" />
         <option value="$PROJECT_DIR$/src/containers/Home/index.js" />
-        <option value="$PROJECT_DIR$/src/containers/Profile/Profile.js" />
         <option value="$PROJECT_DIR$/src/containers/Home/Detailed.js" />
         <option value="$PROJECT_DIR$/src/containers/Home/Home.js" />
         <option value="$PROJECT_DIR$/src/containers/Home/Vacation.js" />
@@ -178,16 +196,17 @@
         <option value="$PROJECT_DIR$/src/rdx/store.js" />
         <option value="$PROJECT_DIR$/src/rdx/reducers.js" />
         <option value="$PROJECT_DIR$/App.js" />
-        <option value="$PROJECT_DIR$/src/Routing.js" />
         <option value="$PROJECT_DIR$/src/containers/Vacancies/VacanciesItem.js" />
-        <option value="$PROJECT_DIR$/src/components/HTMLStructure.js" />
-        <option value="$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js" />
         <option value="$PROJECT_DIR$/src/utils/queryEditor.js" />
+        <option value="$PROJECT_DIR$/src/utils/fetch.js" />
+        <option value="$PROJECT_DIR$/src/containers/Profile/Profile.js" />
+        <option value="$PROJECT_DIR$/src/containers/Vacancies/VacanciesDetailed.js" />
+        <option value="$PROJECT_DIR$/src/Routing.js" />
+        <option value="$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js" />
+        <option value="$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js" />
+        <option value="$PROJECT_DIR$/src/components/HTMLStructure.js" />
         <option value="$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js" />
         <option value="$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js" />
-        <option value="$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js" />
-        <option value="$PROJECT_DIR$/src/containers/Vacancies/VacanciesDetailed.js" />
-        <option value="$PROJECT_DIR$/src/utils/fetch.js" />
         <option value="$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js" />
       </list>
     </option>
@@ -427,50 +446,62 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211035000" />
+    <option name="totallyTimeSpent" value="216372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13932107" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.329602" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.329602" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.5460199" />
       <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.33955225" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13932107" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.27363184" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13932107" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.329602" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329602" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.27363184" />
+      <window_info id="Favorites" order="3" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.329602" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13932107" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.329602" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.329602" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.30099502" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13932107" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.329602" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -719,26 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Profile/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App.test.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -768,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Profile/Profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -792,66 +796,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/HTMLStructure.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="73" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/queryEditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Routing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fetch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-219" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/queryEditor.js" />
+    <entry file="file://$PROJECT_DIR$/fetch.js" />
     <entry file="file://$PROJECT_DIR$/src/utils/fetch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="509">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/Profile/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Profile/Profile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="60">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rdx/reducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -865,27 +852,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/rdx/reducers.js">
+    <entry file="file://$PROJECT_DIR$/src/Routing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="117" selection-start-line="117" selection-end-line="117" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="101" column="107" selection-start-line="101" selection-start-column="107" selection-end-line="101" selection-end-column="107" />
+        <state relative-caret-position="17">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -894,8 +864,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesDetailed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="120" column="99" lean-forward="true" selection-start-line="120" selection-start-column="99" selection-end-line="120" selection-end-column="99" />
+        <state relative-caret-position="-500">
+          <caret line="112" column="26" lean-forward="true" selection-start-line="112" selection-start-column="26" selection-end-line="112" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesConstans.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/VacanciesFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="83" column="37" lean-forward="true" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/HTMLStructure.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rdx/vacancies/vacanciesReducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Vacancies/Vacancies.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="117" column="31" lean-forward="true" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

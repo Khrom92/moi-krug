@@ -14,11 +14,10 @@ const VacanciesStack = createStackNavigator(
 
     },
 
-            {
-                mode: 'modal'
-                //  headerMode: 'float',
-                // headerTransitionPreset: 'uikit'
-            });
+    {
+        mode: 'modal'
+
+    });
 
 export default createMaterialTopTabNavigator({
     VacanciesStack,

@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 
 const styles = RNC`
-    containe {
+    container {
         margin: 2px;
         background-color: #f7f7f7;
         
@@ -75,7 +75,6 @@ const styles = RNC`
 export class VacanciesDetailed extends React.Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            // headerTitle: navigation.state.params.item.title,
             headerTitle: '',
 
             headerRight: (
@@ -95,23 +94,23 @@ export class VacanciesDetailed extends React.Component {
     };
 
     componentWillMount() {
-        const lastId = this.props.navigation.state.params.id;
-        this.props.vacanciesActions.getVacanciesItem(lastId);
+        const { id } = this.props.navigation.state.params;
+        this.props.vacanciesActions.getVacanciesItem(id);
     }
 
 
     render() {
 
-        const item = this.props.vacancies.vacanciesItem;
+        const { vacanciesItem } = this.props.vacancies;
 
-        if (!item)
+        if (!vacanciesItem)
             return false;
 
         const monthNames = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
             "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"
         ];
         onPress = () => {
-            alert('azazaz!')
+            alert('test!')
         };
         let showDate = (date) => {
             let show = new Date(date);
@@ -120,20 +119,20 @@ export class VacanciesDetailed extends React.Component {
         return <View style={styles.scrollBox}>
             <ScrollView style={styles.scroll} contentContainerStyle={styles.contentContainerStyle}>
 
-                <View style={styles.containe}>
+                <View style={styles.container}>
 
                     <View style={styles.salaryBox}>
                         <View>
-                            <Text>{showDate(item.date)}</Text>
+                            <Text>{showDate(vacanciesItem.date)}</Text>
                         </View>
                         <View style={styles.salary}>
                             <Text style={styles.salaryText}>
                                 {
-                                    item.salary ?
+                                    vacanciesItem.salary ?
                                         [
-                                            (item.salary.salaryDown ? `От ${item.salary.salaryDown}` : ''),
-                                            (item.salary.salaryUp ? ` До ${item.salary.salaryUp}` : ''),
-                                            (item.salary.currency ? ` ${item.salary.currency}` : '')
+                                            (vacanciesItem.salary.salaryDown ? `От ${vacanciesItem.salary.salaryDown}` : ''),
+                                            (vacanciesItem.salary.salaryUp ? ` До ${vacanciesItem.salary.salaryUp}` : ''),
+                                            (vacanciesItem.salary.currency ? ` ${vacanciesItem.salary.currency}` : '')
                                         ]
                                         : 'Зарплата не указана'
                                 }
@@ -143,7 +142,7 @@ export class VacanciesDetailed extends React.Component {
 
                     </View>
                     <View style={styles.discription}>
-                        <HTMLStructure data={item.description}/>
+                        <HTMLStructure data={vacanciesItem.description}/>
 
                     </View>
                 </View>

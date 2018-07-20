@@ -63,11 +63,11 @@ class Vacancies extends React.Component {
             headerTitle: '',
 
 
-
             headerLeft: (
                 <Button
                     onPress={() => {
-                        navigation.navigate('VacanciesFilter')}
+                        navigation.navigate('VacanciesFilter')
+                    }
                     }
 
                     title="Отфильтровать"
@@ -83,7 +83,7 @@ class Vacancies extends React.Component {
 
     componentWillMount() {
 
-        this.props.vacanciesActions.getVacanciesOnMount();
+        this.props.vacanciesActions.getVacancies({},false);
     }
 
     pageScroll = () => {
@@ -107,7 +107,6 @@ class Vacancies extends React.Component {
 
     render() {
         const { vacancies } = this.props;
-
         return (
             <View style={styles.container}>
                 <ScrollView onMomentumScrollEnd={this.pageScroll}>
@@ -123,8 +122,10 @@ class Vacancies extends React.Component {
                                     <View style={styles.contentStart}>
                                         <Text style={styles.vacancyTitle}>{vacancy.title}</Text>
                                         <Text style={styles.vacancyDicription}>{vacancy.companyName}</Text>
-                                        <Text style={styles.vacancyDicription}>{vacancy.remote ? 'удаленка' : 'в офисе'}</Text>
-                                        <Text style={styles.vacancyDicription}>{vacancy.fullDay ? 'полный рабочий день' : 'не полный рабочий день'}</Text>
+                                        <Text
+                                            style={styles.vacancyDicription}>{vacancy.remote ? 'удаленка' : 'в офисе'}</Text>
+                                        <Text
+                                            style={styles.vacancyDicription}>{vacancy.fullDay ? 'полный рабочий день' : 'не полный рабочий день'}</Text>
                                         <Text style={styles.vacancySalary}>
                                             {
                                                 vacancy.salary ?
@@ -140,7 +141,7 @@ class Vacancies extends React.Component {
 
                                     </View>
                                 </View>
-                            </TouchableWithoutFeedback> ))
+                            </TouchableWithoutFeedback>))
 
 
                     }
@@ -149,7 +150,6 @@ class Vacancies extends React.Component {
         );
     }
 }
-
 
 
 function mapStateToProps(state) {

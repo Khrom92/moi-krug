@@ -2,26 +2,8 @@ import * as types from './vacanciesConstans';
 import fetch from '../../utils/fetch';
 
 
-export function getVacanciesOnMount() {
-
-    return (dispatch) => {
-        fetch('/vacancies/')
-            .then((data) => {
-                dispatch(saveVacancies(data))
-            })
-            .catch(error => console.error(error));
-    }
-}
-
-export function getVacancies(filter) {
-
-    return (dispatch) => {
-        fetch('/vacancies/', { data: filter })
-            .then((data) => {
-                dispatch(saveVacancies(data))
-            })
-            .catch(error => console.error(error));
-    }
+export function getVacancies(filter, clear = false) {
+    return callFetch(filter, clear)
 }
 
 export function scrollGetVacancies(filter) {
@@ -42,12 +24,6 @@ export function getVacanciesItem(id) {
     }
 }
 
-export function getFilter(data) {
-    return (dispatch) => {
-        dispatch(saveFilter(data));
-    }
-
-}
 
 export const saveFilter = (payload) => {
     return {
@@ -56,23 +32,19 @@ export const saveFilter = (payload) => {
     }
 };
 
-export function getVacanciesAfterFilter(filter) {
+
+const callFetch = (filter = {}, clear = false) => {
     return (dispatch) => {
+        if (clear) {
+            dispatch(claerVacancies([]));
+        }
         fetch('/vacancies/', { data: filter })
             .then((data) => {
-                dispatch(saveVacanciesAfterFilter(data))
+                dispatch(saveVacancies(data))
             })
             .catch(error => console.error(error));
     }
-}
-
-const saveVacanciesAfterFilter = (payload) => {
-    return {
-        type: types.SAVE_VACANCIES_AFTER_FILTER,
-        payload
-    }
 };
-
 
 const saveVacancies = (payload) => {
     return {
@@ -84,6 +56,13 @@ const saveVacancies = (payload) => {
 const saveItem = (payload) => {
     return {
         type: types.SAVE_ITEM,
+        payload
+    }
+};
+
+const claerVacancies = (payload) => {
+    return {
+        type: types.CLEAR_VACANCIES,
         payload
     }
 };
