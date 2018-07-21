@@ -1,5 +1,8 @@
 import * as types from './vacanciesConstans';
 import fetch from '../../utils/fetch';
+import { createActions, handleActions, combineActions } from 'redux-actions';
+
+
 
 
 export function getVacancies(filter, clear = false) {
