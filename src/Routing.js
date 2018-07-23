@@ -20,8 +20,9 @@ const VacanciesStack = createStackNavigator(
     });
 
 export default createMaterialTopTabNavigator({
-    VacanciesStack,
-    Profile
+    VacanciesStack
+    // ,
+    // Profile
 }, {
     initialRouteName: 'VacanciesStack',
     animationEnabled: true,

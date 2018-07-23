@@ -1,5 +1,5 @@
-import fetch from '../../utils/fetch';
 import { createActions } from 'redux-actions';
+import * as api from "../../api/vacanciesApi";
 
 
 export const { saveVacancies, clearVacancies, saveItem, saveFilter } = createActions({
@@ -9,25 +9,29 @@ export const { saveVacancies, clearVacancies, saveItem, saveFilter } = createAct
     SAVE_ITEM: (item) => (item)
 
 });
+
 export function getVacancies(filter = {}) {
     return (dispatch) => {
-        fetch('/vacancies/', { data: filter })
-            .then((data) => {
-                dispatch(saveVacancies(data))
-            })
-            .catch(error => console.error(error));
-    }
+        api.getVacancies(filter)
+.then((data) => {
+    dispatch(saveVacancies(data))
+})
+    .catch(error => console.error(error));
 }
 
+}
 
-export function getVacanciesItem(id) {
+export function getVacanciesItem(id = '') {
     return (dispatch) => {
-        fetch('/vacancies/' + id, {})
+        api.getVacanciesItem(id)
             .then((data) => {
                 dispatch(saveItem(data))
             })
             .catch(error => console.error(error));
     }
+
 }
+
+
 
 

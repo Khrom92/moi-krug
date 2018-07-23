@@ -5,6 +5,7 @@ import HTMLStructure from '../../components/HTMLStructure';
 import * as vacanciesActions from "../../rdx/vacancies/vacanciesActions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { Linking } from 'react-native';
 
 
 const styles = RNC`
@@ -63,8 +64,12 @@ const styles = RNC`
      containerButton { 
          background-color: rgb(86, 119, 252);
          border-radius: 20px;
-         width: 700%;
          margin-bottom: 10px;
+    }
+    vacancyTitle {
+        font-size: 17px;
+        font-weight: bold;
+        font-family: Arial;
     }
     
     
@@ -98,6 +103,11 @@ export class VacanciesDetailed extends React.Component {
         this.props.vacanciesActions.getVacanciesItem(id);
     }
 
+    toLink = () => {
+        const { vacanciesItem } = this.props.vacancies;
+        Linking.openURL('https://moikrug.ru/vacancies/' + vacanciesItem.lastId)
+    };
+
 
     render() {
 
@@ -109,9 +119,7 @@ export class VacanciesDetailed extends React.Component {
         const monthNames = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
             "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"
         ];
-        onPress = () => {
-            alert('test!')
-        };
+
         let showDate = (date) => {
             let show = new Date(date);
             return `${show.getDate()} ${monthNames.find((elem, index) => (index == show.getMonth() ? elem : ""))} ${show.getFullYear()}`
@@ -120,7 +128,9 @@ export class VacanciesDetailed extends React.Component {
             <ScrollView style={styles.scroll} contentContainerStyle={styles.contentContainerStyle}>
 
                 <View style={styles.container}>
-
+                    <View>
+                        <Text style={styles.vacancyTitle}>{vacanciesItem.title}</Text>
+                    </View>
                     <View style={styles.salaryBox}>
                         <View>
                             <Text>{showDate(vacanciesItem.date)}</Text>
@@ -149,9 +159,9 @@ export class VacanciesDetailed extends React.Component {
                 <View style={styles.feedbackWrapper}>
                     <View style={styles.containerButton}>
                         <Button
-                            onPress={onPress}
+                            onPress={this.toLink}
                             color="rgb(255, 255, 255)"
-                            title="Откликнуться"
+                            title="Перейти на сайт"
                         />
                     </View>
                 </View>

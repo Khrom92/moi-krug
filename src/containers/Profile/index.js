@@ -1,4 +1,4 @@
-import component from './Profile';
-
-
-export default component;
+// import component from './Profile';
+//
+//
+// export default component;

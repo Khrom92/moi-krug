@@ -39,7 +39,7 @@ export default class HTMLStructure extends React.Component {
             }
             if (data.name === 'p') {
 
-                return <View>
+                return <View style={styles.description}>
                     <Text>
                         {data.children && data.children.map((elem, index) => {
                             return (<HTMLStructure data={elem} key={index}/>)

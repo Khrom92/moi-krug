@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Button, Image, TouchableWithoutFeedback, Picker } from 'react-native';
+import { Text, View, Button, Picker } from 'react-native';
 import { CheckBox } from 'react-native-elements'
-import ModalDropdown from 'react-native-modal-dropdown';
 import RNC from 'react-native-css';
 import Vacancies from "./Vacancies";
 import * as vacanciesActions from "../../rdx/vacancies/vacanciesActions";
@@ -34,6 +33,12 @@ const styles = RNC`
         border-radius: 20px;
         width: 50%;
         margin-bottom: 10px;
+    }
+    picker {
+         position: absolute;
+         bottom: 0px;
+         left: 0px;
+         right: 0px;
     }
     
 `;
@@ -96,6 +101,14 @@ export class VacanciesFilter extends React.Component {
             });
 
     };
+    locationChange = (itemValue) => {
+        const { vacancies } = this.props;
+        this.props.vacanciesActions.saveFilter(
+            {
+                ...vacancies.filters,
+                location: itemValue
+            });
+    };
 
 
     render() {
@@ -128,16 +141,10 @@ export class VacanciesFilter extends React.Component {
                     <Text>Выберите город</Text>
                     <Picker
                         selectedValue={vacancies.filters.location}
-                        style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}
-                        onValueChange={(itemValue, itemIndex) => {
-                            this.props.vacanciesActions.saveFilter(
-                                {
-                                    ...vacancies.filters,
-                                    location: itemValue
-                                });
-                        }}>
+                        style={styles.picker}
+                        onValueChange={this.locationChange}>
 
-                        {city.map((elem, index) => {
+                        {city.map((elem) => {
                             if (elem === false) {
                                 return (<Picker.Item label={'Город не выбран'} value={''}/>)
                             }

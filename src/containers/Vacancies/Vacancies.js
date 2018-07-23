@@ -1,15 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView, Button, Image, TouchableWithoutFeedback } from 'react-native';
 import RNC from 'react-native-css';
-import { createMaterialTopTabNavigator, StackNavigator } from 'react-navigation';
 import VacanciesDetailed from "./VacanciesDetailed";
 import VacanciesFilter from "./VacanciesFilter";
 import { bindActionCreators } from 'redux';
 import * as vacanciesActions from '../../rdx/vacancies/vacanciesActions';
 
 import { connect } from 'react-redux';
-import { saveFilter } from "../../rdx/vacancies/vacanciesActions";
-import { getVacancies } from "../../rdx/vacancies/vacanciesActions";
+
 
 
 const styles = RNC`
@@ -114,7 +112,6 @@ class Vacancies extends React.Component {
 
     render() {
         const { vacancies } = this.props;
-        console.log(Object.values(vacancies.filters));
         return (
             <View style={styles.container}>
                 <ScrollView onMomentumScrollEnd={this.pageScroll}>
