@@ -13,11 +13,11 @@ export const { saveVacancies, clearVacancies, saveItem, saveFilter } = createAct
 export function getVacancies(filter = {}) {
     return (dispatch) => {
         api.getVacancies(filter)
-.then((data) => {
-    dispatch(saveVacancies(data))
-})
-    .catch(error => console.error(error));
-}
+            .then((data) => {
+                dispatch(saveVacancies(data))
+            })
+            .catch(error => console.error(error));
+    }
 
 }
 

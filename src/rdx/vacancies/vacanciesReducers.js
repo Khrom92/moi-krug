@@ -15,24 +15,24 @@ const initialState = {
 
 };
 
-export default  vacansies = handleActions(
+export default vacansies = handleActions(
     {
         [types.SAVE_VACANCIES]: (state = initialState, action = {}) => (
             {
                 ...state, vacanciesList: [...state.vacanciesList,
                     ...action.payload]
             }),
-    [types.CLEAR_VACANCIES]: (state = initialState) => (
+        [types.CLEAR_VACANCIES]: (state = initialState) => (
             {
                 ...state,
                 vacanciesList: []
             }),
-    [types.SAVE_ITEM]: (state = initialState, action = {}) => (
+        [types.SAVE_ITEM]: (state = initialState, action = {}) => (
             {
                 ...state,
                 vacanciesItem: action.payload
             }),
-    [types.SAVE_FILTER]: (state = initialState, action = {}) => (
+        [types.SAVE_FILTER]: (state = initialState, action = {}) => (
             {
                 ...state,
                 filters: action.payload

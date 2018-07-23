@@ -4,7 +4,7 @@ import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navig
 import Vacancies from './containers/Vacancies/';
 import VacanciesDetailed from './containers/Vacancies/VacanciesDetailed';
 import VacanciesFilter from './containers/Vacancies/VacanciesFilter';
-import Profile from './containers/Profile';
+// import Profile from './containers/Profile';
 
 const VacanciesStack = createStackNavigator(
     {

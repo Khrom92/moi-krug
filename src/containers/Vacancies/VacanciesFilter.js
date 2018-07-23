@@ -9,13 +9,16 @@ import { connect } from "react-redux";
 
 
 const styles = RNC`
-
+    mainWrapper {
+        background-color: rgb(255, 255, 255);
+        
+    }
     feedbackWrapper {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    height: 50px;
-    margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        height: 50px;
+        margin-top: 20px;
 
     }
     
