@@ -1,4 +1,6 @@
 import * as types from './vacanciesConstans';
+import { handleActions } from 'redux-actions';
+
 
 const initialState = {
     vacanciesList: [],
@@ -13,43 +15,29 @@ const initialState = {
 
 };
 
-
-export default function (state = initialState, action = {}) {
-    switch (action.type) {
-
-        case types.SAVE_VACANCIES :
-            return {
-                ...state,
-                vacanciesList: [...state.vacanciesList,
+export default  vacansies = handleActions(
+    {
+        [types.SAVE_VACANCIES]: (state = initialState, action = {}) => (
+            {
+                ...state, vacanciesList: [...state.vacanciesList,
                     ...action.payload]
-            };
-
-
-        case types.CLEAR_VACANCIES :
-            return {
+            }),
+    [types.CLEAR_VACANCIES]: (state = initialState) => (
+            {
                 ...state,
-                vacanciesList:  action.payload
-            };
-
-        case types.SAVE_FILTER :
-            return {
-                ...state,
-                filters: action.payload
-            };
-
-        case types.SAVE_PAGE :
-            return {
-                ...state,
-                pageNum: action.payload
-            };
-
-        case types.SAVE_ITEM :
-            return {
+                vacanciesList: []
+            }),
+    [types.SAVE_ITEM]: (state = initialState, action = {}) => (
+            {
                 ...state,
                 vacanciesItem: action.payload
-            };
+            }),
+    [types.SAVE_FILTER]: (state = initialState, action = {}) => (
+            {
+                ...state,
+                filters: action.payload
+            })
+    },
+    initialState
+);
 
-        default:
-            return state;
-    }
-}

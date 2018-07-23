@@ -8,6 +8,8 @@ import { bindActionCreators } from 'redux';
 import * as vacanciesActions from '../../rdx/vacancies/vacanciesActions';
 
 import { connect } from 'react-redux';
+import { saveFilter } from "../../rdx/vacancies/vacanciesActions";
+import { getVacancies } from "../../rdx/vacancies/vacanciesActions";
 
 
 const styles = RNC`
@@ -83,16 +85,21 @@ class Vacancies extends React.Component {
 
     componentWillMount() {
 
-        this.props.vacanciesActions.getVacancies({},false);
+        this.props.vacanciesActions.getVacancies();
     }
 
     pageScroll = () => {
         let { vacancies } = this.props;
         let page = vacancies.filters.page;
+        let pageNum;
 
         pageNum = page + 1;
 
-        this.props.vacanciesActions.scrollGetVacancies({
+        this.props.vacanciesActions.saveFilter({
+            ...vacancies.filters,
+            page: pageNum
+        });
+        this.props.vacanciesActions.getVacancies({
             ...vacancies.filters,
             page: pageNum
         });
@@ -107,6 +114,7 @@ class Vacancies extends React.Component {
 
     render() {
         const { vacancies } = this.props;
+        console.log(Object.values(vacancies.filters));
         return (
             <View style={styles.container}>
                 <ScrollView onMomentumScrollEnd={this.pageScroll}>

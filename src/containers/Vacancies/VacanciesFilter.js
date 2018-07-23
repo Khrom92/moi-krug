@@ -37,6 +37,7 @@ const styles = RNC`
     }
     
 `;
+
 export class VacanciesFilter extends React.Component {
     static navigationOptions = ({ navigation }) => {
         return {
@@ -59,9 +60,9 @@ export class VacanciesFilter extends React.Component {
     };
 
 
-
     applyChange = () => {
         const { vacancies } = this.props;
+        this.props.vacanciesActions.clearVacancies();
         this.props.vacanciesActions.getVacancies({
             ...vacancies.filters,
             page: 1
@@ -99,6 +100,7 @@ export class VacanciesFilter extends React.Component {
 
     render() {
         const { vacancies } = this.props;
+
         const city = [false, 'Москва', "Санкт-Петербург", "Омск", "Новосибирск", "Оренбуг", "Калининград"];
         return (
             <View style={{ backgroundColor: 'rgb(255, 255, 255)' }}>

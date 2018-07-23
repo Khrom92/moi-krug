@@ -1,21 +1,24 @@
-import * as types from './vacanciesConstans';
 import fetch from '../../utils/fetch';
-import { createActions, handleActions, combineActions } from 'redux-actions';
+import { createActions } from 'redux-actions';
 
 
+export const { saveVacancies, clearVacancies, saveItem, saveFilter } = createActions({
+    SAVE_VACANCIES: (vacancies) => (vacancies),
+    CLEAR_VACANCIES: undefined,
+    SAVE_FILTER: (filter) => (filter),
+    SAVE_ITEM: (item) => (item)
 
-
-export function getVacancies(filter, clear = false) {
-    return callFetch(filter, clear)
-}
-
-export function scrollGetVacancies(filter) {
+});
+export function getVacancies(filter = {}) {
     return (dispatch) => {
-        dispatch(saveFilter(filter));
-
-        dispatch(getVacancies(filter));
+        fetch('/vacancies/', { data: filter })
+            .then((data) => {
+                dispatch(saveVacancies(data))
+            })
+            .catch(error => console.error(error));
     }
 }
+
 
 export function getVacanciesItem(id) {
     return (dispatch) => {
@@ -28,44 +31,3 @@ export function getVacanciesItem(id) {
 }
 
 
-export const saveFilter = (payload) => {
-    return {
-        type: types.SAVE_FILTER,
-        payload
-    }
-};
-
-
-const callFetch = (filter = {}, clear = false) => {
-    return (dispatch) => {
-        if (clear) {
-            dispatch(claerVacancies([]));
-        }
-        fetch('/vacancies/', { data: filter })
-            .then((data) => {
-                dispatch(saveVacancies(data))
-            })
-            .catch(error => console.error(error));
-    }
-};
-
-const saveVacancies = (payload) => {
-    return {
-        type: types.SAVE_VACANCIES,
-        payload
-    }
-};
-
-const saveItem = (payload) => {
-    return {
-        type: types.SAVE_ITEM,
-        payload
-    }
-};
-
-const claerVacancies = (payload) => {
-    return {
-        type: types.CLEAR_VACANCIES,
-        payload
-    }
-};
