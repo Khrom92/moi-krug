@@ -119,7 +119,7 @@ export class VacanciesFilter extends React.Component {
 
         const city = [false, 'Москва', "Санкт-Петербург", "Омск", "Новосибирск", "Оренбуг", "Калининград"];
         return (
-            <View style={{ backgroundColor: 'rgb(255, 255, 255)' }}>
+            <View style={styles.mainWrapper}>
                 <View>
 
                     <CheckBox
