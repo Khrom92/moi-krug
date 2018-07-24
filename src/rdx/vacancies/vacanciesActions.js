@@ -1,12 +1,14 @@
 import { createActions } from 'redux-actions';
 import * as api from "../../api/vacanciesApi";
+import * as types from './vacanciesConstans';
+
 
 
 export const { saveVacancies, clearVacancies, saveItem, saveFilter } = createActions({
-    SAVE_VACANCIES: (vacancies) => (vacancies),
-    CLEAR_VACANCIES: undefined,
-    SAVE_FILTER: (filter) => (filter),
-    SAVE_ITEM: (item) => (item)
+    [types.SAVE_VACANCIES]: (vacancies) => (vacancies),
+    [types.CLEAR_VACANCIES]: undefined,
+    [types.SAVE_FILTER]: (filter) => (filter),
+    [types.SAVE_ITEM]: (item) => (item)
 
 });
 
