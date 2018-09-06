@@ -115,11 +115,13 @@ class Vacancies extends React.Component {
         return (
             <View style={styles.container}>
                 <ScrollView onMomentumScrollEnd={this.pageScroll}>
+                    {/*<ScrollView>*/}
                     {
                         vacancies.vacanciesList.map((vacancy, index) => (
 
                             <TouchableWithoutFeedback key={index} onPress={() => {
-                                this.handleTap(vacancy.lastId)
+                                this.handleTap(vacancy.lastId);
+                                console.log(vacancy.lastId);
                             }}>
                                 <View style={styles.vacancy}>
                                     <Image style={styles.logo}

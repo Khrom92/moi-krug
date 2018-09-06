@@ -31,8 +31,11 @@ export default class HTMLStructure extends React.Component {
 
     render() {
         const { data } = this.props;
+        console.log(data);
 
-
+        if (!data) {
+            return false
+        }
         if (data.type === 'tag') {
             if (data.name === 'br') {
                 return false
@@ -42,6 +45,7 @@ export default class HTMLStructure extends React.Component {
                 return <View style={styles.description}>
                     <Text>
                         {data.children && data.children.map((elem, index) => {
+                            console.log('ewdwedwed', data.children);
                             return (<HTMLStructure data={elem} key={index}/>)
                         })}
                     </Text>

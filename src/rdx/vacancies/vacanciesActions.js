@@ -27,7 +27,8 @@ export function getVacanciesItem(id = '') {
     return (dispatch) => {
         api.getVacanciesItem(id)
             .then((data) => {
-                dispatch(saveItem(data))
+                console.log(JSON.stringify(data, null, 4));
+                dispatch(saveItem(data));
             })
             .catch(error => console.error(error));
     }

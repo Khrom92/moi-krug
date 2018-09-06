@@ -113,14 +113,18 @@ export class VacanciesDetailed extends React.Component {
 
         const { vacanciesItem } = this.props.vacancies;
 
+
         if (!vacanciesItem)
-            return false;
+            return <View/>;
+
+        // console.log(JSON.stringify(vacanciesItem.length));
 
         const monthNames = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
             "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"
         ];
 
         let showDate = (date) => {
+            console.log('ASASDASDASD', date);
             let show = new Date(date);
             return `${show.getDate()} ${monthNames.find((elem, index) => (index == show.getMonth() ? elem : ""))} ${show.getFullYear()}`
         };
